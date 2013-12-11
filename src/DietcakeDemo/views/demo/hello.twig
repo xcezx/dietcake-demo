@@ -1,0 +1,12 @@
+{% extends 'layout/default.twig' %}
+{% block content %}
+<h1 class="title">Hello {{ name | default('World') }}</h1>
+
+<hr class="decorated-rule" />
+
+<h2><label for="name">Input your name</label></h2>
+<form action="/demo/hello" method="get">
+  <input id="name" name="name" type="text" value="{{ name }}" />
+  <button type="submit">Hello</button>
+</form>
+{% endblock %}

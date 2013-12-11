@@ -1,0 +1,12 @@
+# -*- mode: yaml -*-
+web1:
+  name: dietcake-demo
+  document_root: webroot/
+  php_version: 5.4.14
+  php_extensions:
+    - mbstring
+    - zip
+  php_date_timezone: "Asia/Tokyo"
+  php_default_locale: "ja_JP"
+  after_build:
+    - "if [ ! -f composer.phar ]; then curl -sS https://getcomposer.org/installer | php; fi; php composer.phar install --no-dev"
